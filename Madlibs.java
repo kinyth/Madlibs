@@ -2,7 +2,9 @@
  * Kenneth Truong
  * 27 September 2022
  * AP Computer Science A 
- * The code stores user input and outputs what the user types in a sentence 
+ * The code stores user input and outputs what the user types in a sentence
+ * The precondition is that the user must type something into the teminal in order for the code to continue running 
+ * The postcondition guarantees that the code will output a sentence, which includes what the user inputted 
  */
 
 import java.util.Scanner;
