@@ -12,22 +12,16 @@ import java.util.Scanner;
 public class Madlibs{
     public static void main(String[] args) {
         System.out.print("Here is your madlibs: ");
-        System.out.println("Once upon a time in a <adjective> land, a <noun> <adverb> grew.");
-        System.out.print("Now type in an adjective: ");
-
-        Scanner sc = new Scanner(System.in);//user input will be taken and stored in the "adjective" variable in the next line
-        String adjective = sc.nextLine();
-        System.out.println("Once upon a time in a "+ adjective + " land, a <noun> <adverb> grew.");
+        String sentence = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";//displays the sentence the user will edit
+        System.out.println(sentence);
+        Scanner sc = new Scanner(System.in);//creates a scanner 
         
-        System.out.print("Now type in a noun: ");
-        String noun = sc.next();//user input is direcly taken and stored in the variable "noun"
-        System.out.println("Once upon a time in a "+ adjective + " land, a " + noun + " <adverb> grew.");
-        
-        System.out.println("Finally, type in a adverb: ");
-        String adverb = sc.next();//user input is stored in "adverb"
-        System.out.println("Here is your completed Madlibs: ");
-        System.out.println("Once upon a time in a "+ adjective + " land, a " + noun + " " + adverb +" grew.");//Outputs all of the users inputs in a sentence template
-        
-
+        for(int i = 0; i < 3; i++){//algorithm that goes through the sentence 3 times to replace the 3 blanks
+            System.out.print("Please type in a " + sentence.substring(sentence.indexOf("<")+1,sentence.indexOf(">")) + ": ");//search for words that start and end with <> to retrieve part of speech
+            String userInput = sc.nextLine();//user input
+            String savedInput = sentence.substring(sentence.indexOf("<"),sentence.indexOf(">")+1);
+            sentence = sentence.replace(savedInput, userInput);//replaces what was between <> with the user input
+            System.out.println(sentence);//shows the progression of the sentence
+        }
     }
 }
