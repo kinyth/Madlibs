@@ -12,7 +12,10 @@ import java.util.Scanner;
 public class Madlibs{
     public static void main(String[] args) {
         System.out.print("Here is your madlibs: ");
-        String sentence = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";//displays the sentence the user will edit
+        //String sentence = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";//displays the sentence the user will edit
+        //String sentence = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";
+        String sentence = "I like <name>, they are <number> and <adjective>.";
+        //testing 3 different madlib senteces
         System.out.println(sentence);
         Scanner sc = new Scanner(System.in);//creates a scanner 
         
@@ -21,7 +24,7 @@ public class Madlibs{
             String userInput = sc.nextLine();//user input
             String savedInput = sentence.substring(sentence.indexOf("<"),sentence.indexOf(">")+1);
             sentence = sentence.replace(savedInput, userInput);//replaces what was between <> with the user input
-            System.out.println(sentence);//shows the progression of the sentence
         }
+            System.out.println(sentence);//prints final madlib
     }
 }
